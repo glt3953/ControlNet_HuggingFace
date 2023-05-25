@@ -18,16 +18,23 @@ repo_dir = pathlib.Path(__file__).parent
 submodule_dir = repo_dir / 'ControlNet'
 sys.path.append(submodule_dir.as_posix())
 
-try:
-    from annotator.canny import apply_canny
-    from annotator.hed import apply_hed, nms
-    from annotator.midas import apply_midas
-    from annotator.mlsd import apply_mlsd
-    from annotator.openpose import apply_openpose
-    from annotator.uniformer import apply_uniformer
-    from annotator.util import HWC3, resize_image
-except Exception:
-    pass
+#try:
+#    from annotator.canny import apply_canny
+#    from annotator.hed import apply_hed, nms
+#    from annotator.midas import apply_midas
+#    from annotator.mlsd import apply_mlsd
+#    from annotator.openpose import apply_openpose
+#    from annotator.uniformer import apply_uniformer
+#    from annotator.util import HWC3, resize_image
+#except Exception:
+#    pass
+from annotator.canny import apply_canny
+from annotator.hed import apply_hed, nms
+from annotator.midas import apply_midas
+from annotator.mlsd import apply_mlsd
+from annotator.openpose import apply_openpose
+from annotator.uniformer import apply_uniformer
+from annotator.util import HWC3, resize_image
 
 CONTROLNET_MODEL_IDS = {
     'canny': 'lllyasviel/sd-controlnet-canny',
